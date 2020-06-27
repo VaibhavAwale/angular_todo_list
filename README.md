@@ -35,10 +35,26 @@ The UI of the application is divided into separate logical UI components. Each a
 1. Update the auto-generated "app.component" component's .ts and .html file
 2. Add CSS styling in app.component.css
 3. Build and verify that the changes are reflected
-4. Add new component for input text field - task-input
+
+### Create text input field component
+1. Add new component for input text field - task-input
     ```
     ng generate component task-input
     ```
+2. We will be using [Reactive](https://angular.io/guide/reactive-forms) forms for creating form input. 
+    1. Edit the "task-input.component.ts" file to import `FormControl`.
+    2. Import `ReactiveFormsModule` in app.module.ts
+    3. Add `formControl` object for input text field.
+
+3. Add necessary html form elements and corresponding event listeners.
+    1. In this example, we add `input type="text"` and `button` elements
+    2. The common form elements are grouped together using `FormGroup`
+    3. The complete form group can register a callback when the input is submitted, using `ngSubmit`
+
+4. Add validation for form inputs
+    1. Import `Validators` from `'@angular/forms'`.
+    1. In this example, the text task input field is marked as required.
+    2. The submit button is disabled if text task input field is empty.
 
 ## References
 
